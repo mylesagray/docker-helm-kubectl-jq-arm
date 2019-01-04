@@ -1,33 +1,14 @@
-# helm-kubernetes Docker hub image
+# helm-kubectl-jq Docker image
 
-[![](https://images.microbadger.com/badges/image/dtzar/helm-kubectl.svg)](https://microbadger.com/images/dtzar/helm-kubectl "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/dtzar/helm-kubectl.svg)](https://microbadger.com/images/dtzar/helm-kubectl "Get your own version badge on microbadger.com")
-[![Build Status](https://travis-ci.org/dtzar/helm-kubectl.svg?branch=master)](https://travis-ci.org/dtzar/helm-kubectl)
-[![Docker Stars](https://img.shields.io/docker/stars/dtzar/helm-kubectl.svg?style=flat)](https://hub.docker.com/r/dtzar/helm-kubectl/)
-[![Docker Automated build](https://img.shields.io/docker/automated/dtzar/helm-kubectl.svg?style=flat)]()
-[![Docker Pulls](https://img.shields.io/docker/pulls/dtzar/helm-kubectl.svg)]()
+[![](https://images.microbadger.com/badges/image/bskim45/helm-kubectl-jq.svg)](https://microbadger.com/images/bskim45/helm-kubectl-jq "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/bskim45/helm-kubectl-jq.svg)](https://microbadger.com/images/bskim45/helm-kubectl-jq "Get your own version badge on microbadger.com")
+[![Build Status](https://travis-ci.org/bskim45/docker-helm-kubectl-jq.svg?branch=master)](https://travis-ci.org/bskim45/docker-helm-kubectl-jq)
+[![Docker Stars](https://img.shields.io/docker/stars/bskim45/helm-kubectl-jq.svg?style=flat)](https://hub.docker.com/r/bskim45/helm-kubectl-jq/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/bskim45/helm-kubectl-jq.svg)]()
 
 Supported tags and release links
 
-* [2.12.1](https://github.com/dtzar/helm-kubectl/releases/tag/2.12.1) - helm v2.12.1, kubectl v1.13.1, alpine 3.8
-* [2.12.0](https://github.com/dtzar/helm-kubectl/releases/tag/2.12.0) - helm v2.12.0, kubectl v1.13.0, alpine 3.8
-* [2.11.0](https://github.com/dtzar/helm-kubectl/releases/tag/2.11.0) - helm v2.11.0, kubectl v1.11.3, alpine 3.8
-* [2.10.0](https://github.com/dtzar/helm-kubectl/releases/tag/2.10.0) - helm v2.10.0, kubectl v1.11.2, alpine 3.8
-* [2.9.1](https://github.com/dtzar/helm-kubectl/releases/tag/2.9.1) - helm v2.9.1, kubectl v1.10.2, alpine 3.7
-* [2.9.0](https://github.com/dtzar/helm-kubectl/releases/tag/2.9.0) - helm v2.9.0, kubectl v1.10.2, alpine 3.7
-* [2.8.2](https://github.com/dtzar/helm-kubectl/releases/tag/2.8.2) - helm v2.8.2, kubectl v1.9.4, alpine 3.7
-* [2.8.1](https://github.com/dtzar/helm-kubectl/releases/tag/2.8.1) - helm v2.8.1, kubectl v1.9.2, alpine 3.7
-* [2.8.0](https://github.com/dtzar/helm-kubectl/releases/tag/2.8.0) - helm v2.8.0, kubectl v1.9.2, alpine 3.7
-* [2.7.2](https://github.com/dtzar/helm-kubectl/releases/tag/2.7.2) - helm v2.7.2, kubectl v1.8.3, alpine 3.6
-* [2.7.0](https://github.com/dtzar/helm-kubectl/releases/tag/2.7.0) - helm v2.7.0, kubectl v1.8.1, alpine 3.6
-* [2.6.2](https://github.com/dtzar/helm-kubectl/releases/tag/2.6.2) - helm v2.6.2, kubectl v1.7.9, alpine 3.6
-* [2.6.1](https://github.com/dtzar/helm-kubectl/releases/tag/2.6.1) - helm v2.6.1, kubectl v1.7.6, alpine 3.6
-* [2.6.0](https://github.com/dtzar/helm-kubectl/releases/tag/2.6.0) - helm v2.6.0, kubectl v1.7.4, alpine 3.6
-* [2.5.1](https://github.com/dtzar/helm-kubectl/releases/tag/2.5.1) - helm v2.5.1, kubectl v1.7.2, alpine 3.6
-* [2.5.0](https://github.com/dtzar/helm-kubectl/releases/tag/2.5.0) - helm v2.5.0, kubectl v1.6.6, alpine 3.6
-* [2.4.2](https://github.com/dtzar/helm-kubectl/releases/tag/2.4.2) - helm v2.4.2, kubectl v1.6.4, alpine 3.6
-* [2.4.1](https://github.com/dtzar/helm-kubectl/releases/tag/2.4.1) - helm v2.4.1, kubectl v1.6.2, alpine 3.5
-* [2.3.1](https://github.com/dtzar/helm-kubectl/releases/tag/2.3.1) - helm v2.3.1, kubectl v1.6.2, alpine 3.5
+* [2.12.1](https://github.com/bskim45/helm-kubectl-jq/releases/tag/2.12.1) - helm v2.12.1, kubectl v1.13.1, alpine 3.8, jq 1.6
 
 ## Overview
 
@@ -39,11 +20,11 @@ If it is desired to only use kubectl and have kubectl as the entry command (vers
 ## Run
 
 Example to just run helm on entry:  
-`docker run --rm dtzar/helm-kubectl helm`  
+`docker run --rm bskim45/helm-kubectl-jq helm`  
 By default kubectl will try to use /root/.kube/config file for connection to the kubernetes cluster, but does not exist by default in the image.
 
 Example for use with personal administration or troubleshooting with volume mount for kubeconfig files:  
-`docker run -it -v ~/.kube:/root/.kube dtzar/helm-kubectl`  
+`docker run -it -v ~/.kube:/root/.kube bskim45/helm-kubectl-jq`  
 The -v maps your host docker machine Kubernetes configuration directory (~/.kube) to the container's Kubernetes configuration directory (root/.kube).
 
 ## Build
@@ -53,4 +34,4 @@ For doing a manual local build of the image:
 
 This image is now fully automated via travisci.org.  
 For reference this .travis.yml file can be validated via:  
-`docker run --rm -it -v yourclonedreporoot:/project caktux/travis-cli lint ./travis.yml`
+`docker run --rm -it -v yourclonedreporoot:/project caktux/travis-cli lint ./.travis.yml`
