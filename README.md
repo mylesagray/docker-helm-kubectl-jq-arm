@@ -8,6 +8,7 @@
 
 Supported tags and release links
 
+* [2.12.2](https://github.com/bskim45/helm-kubectl-jq/releases/tag/2.12.2) - helm v2.12.2, kubectl v1.13.2, alpine 3.8, jq 1.6
 * [2.12.1](https://github.com/bskim45/helm-kubectl-jq/releases/tag/2.12.1) - helm v2.12.1, kubectl v1.13.1, alpine 3.8, jq 1.6
 
 ## Overview
@@ -19,19 +20,18 @@ If it is desired to only use kubectl and have kubectl as the entry command (vers
 
 ## Run
 
-Example to just run helm on entry:  
-`docker run --rm bskim45/helm-kubectl-jq helm`  
+Example to just run helm on entry:
+`docker run --rm bskim45/helm-kubectl-jq helm`
 By default kubectl will try to use /root/.kube/config file for connection to the kubernetes cluster, but does not exist by default in the image.
 
-Example for use with personal administration or troubleshooting with volume mount for kubeconfig files:  
-`docker run -it -v ~/.kube:/root/.kube bskim45/helm-kubectl-jq`  
-The -v maps your host docker machine Kubernetes configuration directory (~/.kube) to the container's Kubernetes configuration directory (root/.kube).
+Example for use with personal administration or troubleshooting with volume mount for kubeconfig files:
+`docker run -it -v ~/.kube:/root/.kube bskim45/helm-kubectl-jq`
 
 ## Build
 
-For doing a manual local build of the image:  
+For doing a manual local build of the image:
 `make docker_build`
 
-This image is now fully automated via travisci.org.  
-For reference this .travis.yml file can be validated via:  
+This image is now fully automated via travisci.org.
+For reference this .travis.yml file can be validated via:
 `docker run --rm -it -v yourclonedreporoot:/project caktux/travis-cli lint ./.travis.yml`
