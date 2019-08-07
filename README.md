@@ -8,6 +8,7 @@
 
 Supported tags and release links
 
+* [2.14.2](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/2.14.2) - helm v2.14.2, kubectl v1.15.2, alpine 3.10, jq 1.6
 * [2.14.1](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/2.14.1) - helm v2.14.1, kubectl v1.14.4, alpine 3.9, jq 1.6
 * [2.14.0](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/2.14.0) - helm v2.14.0, kubectl v1.14.1, alpine 3.9, jq 1.6
 * [2.13.1](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/2.13.1) - helm v2.13.1, kubectl v1.13.4, alpine 3.9, jq 1.6
