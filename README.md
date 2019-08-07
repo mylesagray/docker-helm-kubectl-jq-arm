@@ -2,7 +2,7 @@
 
 [![](https://images.microbadger.com/badges/image/bskim45/helm-kubectl-jq.svg)](https://microbadger.com/images/bskim45/helm-kubectl-jq "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/bskim45/helm-kubectl-jq.svg)](https://microbadger.com/images/bskim45/helm-kubectl-jq "Get your own version badge on microbadger.com")
-[![Build Status](https://travis-ci.org/bskim45/docker-helm-kubectl-jq.svg?branch=master)](https://travis-ci.org/bskim45/docker-helm-kubectl-jq)
+[![Build Status](https://travis-ci.com/bskim45/docker-helm-kubectl-jq.svg?branch=master)](https://travis-ci.com/bskim45/docker-helm-kubectl-jq.svg)
 [![Docker Stars](https://img.shields.io/docker/stars/bskim45/helm-kubectl-jq.svg?style=flat)](https://hub.docker.com/r/bskim45/helm-kubectl-jq/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/bskim45/helm-kubectl-jq.svg)]()
 
