@@ -1,0 +1,39 @@
+name: Docker Image CI
+
+on:
+  push:
+    tags:
+      - "*"
+
+env:
+  DOCKER_IMAGE: bskim45/helm-kubectl-jq
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      
+    - name: Docker Hub login
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u="${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      
+    - name: Build the Docker image
+      run: >
+        docker build --build-arg VCS_REF=$(git rev-parse --short HEAD)
+        --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") 
+        --pull -t $DOCKER_IMAGE:image .
+    
+    - name: Push the Docker image
+      run: |
+        # Strip git ref prefix from version
+        VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+        
+        # Use Docker `latest` tag convention
+        [ "$VERSION" == "master" ] && VERSION=latest
+        
+        echo "Push: $DOCKER_IMAGE:$VERSION"
+        
+        docker tag $DOCKER_IMAGE:image $DOCKER_IMAGE:$VERSION
+        docker push $DOCKER_IMAGE:$VERSION
+        
