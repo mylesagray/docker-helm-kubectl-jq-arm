@@ -8,8 +8,9 @@
 
 Supported tags and release links
 
-* [3.1.0](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/3.0.2) - helm v3.1.0, kubectl v1.17.3, alpine 3.11, jq 1.6
-* [3.0.3](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/3.0.2) - helm v3.0.3, kubectl v1.17.2, alpine 3.11, jq 1.6
+* [3.1.1](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/3.1.1) - helm v3.1.1, kubectl v1.17.3, alpine 3.11, jq 1.6
+* [3.1.0](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/3.1.0) - helm v3.1.0, kubectl v1.17.3, alpine 3.11, jq 1.6
+* [3.0.3](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/3.0.3) - helm v3.0.3, kubectl v1.17.2, alpine 3.11, jq 1.6
 * [3.0.2](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/3.0.2) - helm v3.0.2, kubectl v1.17.0, alpine 3.10, jq 1.6
 * [3.0.1](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/3.0.1) - helm v3.0.1, kubectl v1.16.3, alpine 3.10, jq 1.6
 * [3.0.0](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/3.0.0) - helm v3.0.0, kubectl v1.16.3, alpine 3.10, jq 1.6
