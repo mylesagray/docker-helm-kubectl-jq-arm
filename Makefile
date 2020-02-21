@@ -12,3 +12,10 @@ docker_build:
 docker_push:
 	# Push to DockerHub
 	docker push $(DOCKER_IMAGE):$(DOCKER_TAG)
+
+.PHONY: latest
+latest: HELM=$(shell ./version.sh helm)
+latest: KUBECTL=$(shell ./version.sh kubectl)
+latest:
+	sed -i 's/KUBE_LATEST_VERSION="v[0-9]*.[0-9]*.[0-9]*"/KUBE_LATEST_VERSION="$(KUBECTL)"/' Dockerfile
+	sed -i 's/HELM_VERSION="v[0-9]*.[0-9]*.[0-9]*"/HELM_VERSION="$(HELM)"/' Dockerfile
