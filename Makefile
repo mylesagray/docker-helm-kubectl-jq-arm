@@ -17,5 +17,6 @@ docker_push:
 latest: HELM=$(shell ./version.sh helm)
 latest: KUBECTL=$(shell ./version.sh kubectl)
 latest:
-	sed -i 's/KUBE_LATEST_VERSION="v[0-9]*.[0-9]*.[0-9]*"/KUBE_LATEST_VERSION="$(KUBECTL)"/' Dockerfile
-	sed -i 's/HELM_VERSION="v[0-9]*.[0-9]*.[0-9]*"/HELM_VERSION="$(HELM)"/' Dockerfile
+	sed -i.bak 's/KUBE_LATEST_VERSION="v[0-9]*.[0-9]*.[0-9]*"/KUBE_LATEST_VERSION="$(KUBECTL)"/' Dockerfile
+	sed -i.bak 's/HELM_VERSION="v[0-9]*.[0-9]*.[0-9]*"/HELM_VERSION="$(HELM)"/' Dockerfile
+	rm Dockerfile.bak
