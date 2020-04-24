@@ -20,3 +20,12 @@ latest:
 	sed -i.bak 's/KUBE_LATEST_VERSION="v[0-9]*.[0-9]*.[0-9]*"/KUBE_LATEST_VERSION="$(KUBECTL)"/' Dockerfile
 	sed -i.bak 's/HELM_VERSION="v[0-9]*.[0-9]*.[0-9]*"/HELM_VERSION="$(HELM)"/' Dockerfile
 	rm Dockerfile.bak
+
+.PHONY: commit
+commit: HELM=$(shell ./version.sh helm)
+commit: KUBECTL=$(shell ./version.sh kubectl)
+commit: MSG=helm $(HELM), kubectl $(KUBECTL), alpine 3.11, jq 1.6
+commit:
+	git checkout -b $(HELM)
+	git add Dockerfile README.md
+	git commit -m "$(MSG)"
