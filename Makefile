@@ -24,7 +24,7 @@ latest:
 .PHONY: commit
 commit: HELM=$(shell ./version.sh helm)
 commit: KUBECTL=$(shell ./version.sh kubectl)
-commit: MSG=helm $(HELM), kubectl $(KUBECTL), alpine 3.11, jq 1.6
+commit: MSG=helm $(HELM), kubectl $(KUBECTL), alpine 3.12, jq 1.6
 commit:
 	git checkout -b $(HELM)
 	git add Dockerfile README.md
