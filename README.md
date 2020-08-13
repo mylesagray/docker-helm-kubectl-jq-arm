@@ -26,6 +26,7 @@
 
 ### Helm 2
 
+* [2.16.9](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/2.16.9) - helm v2.16.9, kubectl v1.18.7, alpine 3.12, jq 1.6
 * [2.16.8](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/2.16.8) - helm v2.16.8, kubectl v1.18.7, alpine 3.12, jq 1.6
 * [2.16.7](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/2.16.7) - helm v2.16.7, kubectl v1.18.3, alpine 3.11, jq 1.6
 * [2.16.6](https://github.com/bskim45/docker-helm-kubectl-jq/releases/tag/2.16.6) - helm v2.16.6, kubectl v1.18.2, alpine 3.11, jq 1.6
